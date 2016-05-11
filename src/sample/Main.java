@@ -10,8 +10,12 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("SBE.fxml"));
-        primaryStage.setTitle("Hello World");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("SBE.fxml"));
+        Parent root = loader.load();
+        Controller myController = loader.getController();
+
+
+        primaryStage.setTitle("SajBoxEditor");
         primaryStage.setScene(new Scene(root, 500, 475));
         primaryStage.show();
     }
