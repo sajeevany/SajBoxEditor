@@ -9,10 +9,11 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="true" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#handleFileLoadSequence" text="Load" />
-                  <MenuItem mnemonicParsing="false" text="Close" />
+                <MenuItem mnemonicParsing="false" onAction="#handleFileLoadSequence" text="Load" fx:id="LoadFileMenuItem"/>
+                <MenuItem mnemonicParsing="false" onAction="#handleBoxFileSaveSequence" text="Save" fx:id="SaveBoxFileMenuItem"/>
+                <MenuItem mnemonicParsing="false" onAction="#handleCloseApplicationSequence" text="Close" fx:id="CloseAppMenuItem"/>
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">

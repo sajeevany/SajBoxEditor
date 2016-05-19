@@ -31,14 +31,14 @@ public class FileLoader {
     {
         //load user selected file
         File file = fileChooser.showOpenDialog(stage);
-        if (file == null)
+        if (file != null)
         {
-            throw new IllegalArgumentException("File not found.");
+            //user has chosen a file
+            //check if tif/tiff/png or else fail
+
+            //load image
+            basePane.setImage(new Image("file:" + file.getAbsolutePath()));
         }
 
-        //check if tif/tiff/png or else fail
-
-        //load image
-        basePane.setImage(new Image("file:" + file.getAbsolutePath()));
     }
 }
