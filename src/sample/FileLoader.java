@@ -1,19 +1,12 @@
 package sample;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import javax.imageio.ImageIO;
 import java.io.File;
-import java.io.IOException;
 
 /**
  * Created by Admin on 5/6/2016.
@@ -44,8 +37,6 @@ public class FileLoader {
         }
 
         //check if tif/tiff/png or else fail
-
-
 
         //load image
         basePane.setImage(new Image("file:" + file.getAbsolutePath()));

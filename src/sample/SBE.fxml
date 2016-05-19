@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
@@ -46,12 +47,12 @@
                </padding>
             </Label>
             <Region prefHeight="0.0" visible="false" HBox.hgrow="ALWAYS" />
-            <Label text="Zoom 100%" fx:id="zoomSliderLabel">
+            <Label fx:id="zoomSliderLabel" text="Zoom 100%">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <Slider accessibleText="Zoom" showTickMarks="true" fx:id="zoomSilder" min="0" max="200" value="100" showTickLabels="false">
+            <Slider fx:id="zoomSilder" accessibleText="Zoom" max="200" min="0" showTickLabels="false" showTickMarks="true" value="100">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -71,15 +72,20 @@
       </TableView>
    </left>
    <center>
-      <ScrollPane fx:id="mainScrollPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <content>
-            <StackPane fx:id="stackPane">
-               <children>
-                  <AnchorPane fx:id="boxPane" />
-                  <ImageView fx:id="baseImagePane" pickOnBounds="true" preserveRatio="true" />
-               </children>
-            </StackPane>
-         </content>
-      </ScrollPane>
+        <ScrollPane fx:id="mainScrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="ALWAYS" prefHeight="200.0" prefWidth="200.0" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
+           <content>
+                <Group fx:id="scrollPaneGroup">
+                   <children>
+                        <StackPane fx:id="mainStackPane">
+                            <children>
+                              <AnchorPane fx:id="boxPane" />
+                              <ImageView fx:id="baseImagePane" preserveRatio="true" />
+                            </children>
+                        </StackPane>
+                   </children>
+                </Group>
+           </content>
+        </ScrollPane>
+
    </center>
 </BorderPane>
